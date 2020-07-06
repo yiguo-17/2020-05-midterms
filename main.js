@@ -10,7 +10,7 @@ const capitalizeSentences = function(str){
 }
 
 const isValidPassword = function(str){
-  let result = str.length>12;//valid password length greater than 12.
+  let result = str.length>=12;//valid password length greater than or equal to 12.
   for (let i=0; i<str.length; i++){
     result = result && (str[i] !==' ')
   }
