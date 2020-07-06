@@ -4,7 +4,7 @@ const capitalizeSentences = function(str){
     if(i===0){result+=str[0].toUpperCase();}//Uppercase the first letter.
     else if(str[i-1]===' '&&str[i-2]==='.'){result += str[i].toUpperCase();}
     //uppercase the letter follow`. `
-    else{result = result.concat(str[i].toLowerCase());}
+    else{result += str[i].toLowerCase();}
   }
   return result
 }
