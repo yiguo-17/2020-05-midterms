@@ -1,8 +1,8 @@
 const capitalizeSentences = function(str){
   let result ='';
   for(let i=0; i<str.length; i++){
-    if(i===0){result = result.concat(str[0].toUpperCase());}//Uppercase the first letter.
-    else if(str[i-1]===' '&&str[i-2]==='.'){result = result.concat(str[i].toUpperCase());}
+    if(i===0){result+=str[0].toUpperCase();}//Uppercase the first letter.
+    else if(str[i-1]===' '&&str[i-2]==='.'){result += str[i].toUpperCase();}
     //uppercase the letter follow`. `
     else{result = result.concat(str[i].toLowerCase());}
   }
@@ -38,9 +38,9 @@ const deleteMiddleLetters = function(str){
   const oe = str.length % 2;
   for(let i=0; i<str.length; i++){
     if(oe ===1 && i !==(str.length-1)/2){
-      result = result.concat(str[i])}
+      result += str[i]}
     if(oe ===0&&i!==str.length/2-1&&i !== str.length/2){
-      result = result.concat(str[i])}
+      result += str[i]}
   }
   return result;
 }
