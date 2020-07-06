@@ -35,6 +35,29 @@ capitalizeSentences('A magIcian is strong because he feels pain. He Feels the di
 
 ---
 
+`isValidPassword` - returns false if there is a space in the given string or its length is less than 12 characters, and true otherwise--in other words, a valid password has no spaces and is at least 12 characters, and this function tells you if the string passed in follows those rules
+
+**Example Calls**
+
+isValidPassword('hey no this is not how it should be') -> false
+
+isValidPassword('bad password') -> false
+
+isValidPassword('shorty') -> false
+
+isValidPassword('ritemoarpls') -> false
+
+isValidPassword('longpasswordwithnospaces') -> true
+
+isValidPassword('justlongenuf') -> true
+
+**Hints**
+
+* Remember that it should return `true` only if both conditions are true, and `false` if either condition is not met.
+* Your logic will be a little simpler with `.includes` (also not too hard to research if you're not used to it!), although this is definitely solvable with a `for` loop.
+
+---
+
 `makeHalfSquares` - returns a new array where every number in the given array has been squared and then halved (divided by two)
 
 **Example Calls**
@@ -59,3 +82,50 @@ countAs([90, 50, 80, 87, 100, 90, 106, 110]) -> 5
 ---
 
 `deleteMiddleLetters` -> deletes the middle letter(s) from a string, returning the remaining string
+
+**Example Calls**
+
+deleteMiddleLetters('hello') -> 'helo'
+deleteMiddleLetters('goodbye') -> 'goobye'
+deleteMiddleLetters('yessir') -> 'yeir'
+deleteMiddleLetters('oh hello there') -> 'oh hel there'
+
+**Hints**
+
+* You can solve this with string building, but `.slice` might be easier. Usually learning a new tool takes too much time to do on a test, but slice isn't too hard. Spending time researching it might be worth it, depending on how the problem is shaping up for you.
+* Either way, by the second test, you'll need to treat strings with odd numbers of characters different from even numbers of characters.
+* It would likely help to make a variable holding some middle index of your string. Calculate it beforehand so you don't have to write that code out over and over!
+* And to calculate it, you may want to use a built-in rounding method. Particularly check out `Math.floor`, although `Math.round` or `Math.ceil` might fit your style better.
+
+---
+
+`lastIndexOfSpace` -> returns the last appearance of a space character within the given string, and -1 if none is found
+
+**Example Calls**
+
+lastIndexOfSpace('hey you') -> 3
+lastIndexOfSpace(`what even I can't`) -> 5
+lastIndexOfSpace('pizzapizza') -> -1
+lastIndexOfSpace('hardtoreadwithnospaceshuh') -> -1
+
+**Hints**
+
+* You can use some complex `indexOf` calls to find the very last index, but it's easier to loop yourself or to find a JavaScript method that returns the last index of a character in a string. It exists!
+* If you don't use a method, the difficult logic is in finding when to return the index and when to return a -1. But it's doable!
+
+---
+
+`hyphenateName` -> replaces the space between the last and next-to-last names with a hyphen
+
+**Example Calls**
+
+hyphenateName('Jaffe Obama') -> 'Jaffe-Obama'
+hyphenateName('Kaleziq Musk') -> 'Kaleziq-Musk'
+hyphenateName('Colin Jaffe Obama') -> 'Colin Jaffe-Obama'
+hyphenateName('Mesuara Kaleziq Musk') -> 'Mesuara Kaleziq-Musk'
+hyphenateName('Edward James Olmos McDonnell') -> 'Edward James Olmos-McDonnell'
+
+**Hints**
+
+* This can be solved reasonably easily using string-building.
+* Especially if you don't redo your logic for `lastIndexOfSpace`. If it passes the tests, then it works, and you can use that function's return value in this one!
